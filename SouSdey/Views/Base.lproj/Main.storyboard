@@ -32,7 +32,7 @@
                                     <segue destination="tSf-YN-Div" kind="show" identifier="goToLogin" id="tKZ-Ir-0pl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-7E-1oE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙏SouSdey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-7E-1oE">
                                 <rect key="frame" x="52" y="448" width="336" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HPr-pQ-izs"/>
