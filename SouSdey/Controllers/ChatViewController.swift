@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChatViewController: UIViewController {
 
@@ -15,4 +16,11 @@ class ChatViewController: UIViewController {
     @IBAction func messagePressed(_ sender: UIButton) {
     }
     
+    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+    }
 }
