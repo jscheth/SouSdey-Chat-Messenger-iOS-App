@@ -1,0 +1,6 @@
+framework module Pods_SouSdey_SouSdeyUITests {
+  umbrella header "Pods-SouSdey-SouSdeyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -12,7 +12,6 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="SouSdey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e46-rK-vgb">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
@@ -32,8 +31,8 @@
                                     <segue destination="tSf-YN-Div" kind="show" identifier="goToLogin" id="tKZ-Ir-0pl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙏SouSdey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-7E-1oE">
-                                <rect key="frame" x="52" y="448" width="336" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙏SouSdey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-7E-1oE" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                <rect key="frame" x="52" y="448" width="275.66666666666669" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HPr-pQ-izs"/>
                                 </constraints>
@@ -61,14 +60,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Chk-Mo-et3" firstAttribute="top" secondItem="zJb-bI-bLJ" secondAttribute="bottom" constant="8" id="DnK-be-u8R"/>
-                            <constraint firstItem="l4t-7E-1oE" firstAttribute="centerX" secondItem="e46-rK-vgb" secondAttribute="centerX" id="Jeu-km-e0c"/>
                             <constraint firstItem="Chk-Mo-et3" firstAttribute="bottom" secondItem="pxD-er-EqW" secondAttribute="bottom" id="Pp3-qs-ZoU"/>
                             <constraint firstItem="l4t-7E-1oE" firstAttribute="centerY" secondItem="e46-rK-vgb" secondAttribute="centerY" id="dMH-QU-PLP"/>
                             <constraint firstItem="Chk-Mo-et3" firstAttribute="trailing" secondItem="pxD-er-EqW" secondAttribute="trailing" id="mps-Xx-fEM"/>
                             <constraint firstItem="Chk-Mo-et3" firstAttribute="leading" secondItem="pxD-er-EqW" secondAttribute="leading" id="qIi-mS-I9s"/>
                             <constraint firstItem="pxD-er-EqW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l4t-7E-1oE" secondAttribute="trailing" id="vGy-1p-xoR"/>
+                            <constraint firstItem="l4t-7E-1oE" firstAttribute="leading" secondItem="pxD-er-EqW" secondAttribute="leading" constant="52" id="wC2-b3-Ay5"/>
                             <constraint firstItem="zJb-bI-bLJ" firstAttribute="trailing" secondItem="pxD-er-EqW" secondAttribute="trailing" id="wfb-tX-JrM"/>
-                            <constraint firstItem="l4t-7E-1oE" firstAttribute="leading" secondItem="pxD-er-EqW" secondAttribute="leading" constant="52" id="x4J-MC-ofr"/>
                             <constraint firstItem="zJb-bI-bLJ" firstAttribute="leading" secondItem="pxD-er-EqW" secondAttribute="leading" id="zhV-Rx-Xf3"/>
                         </constraints>
                     </view>
@@ -77,6 +75,7 @@
                         <outlet property="titleLabel" destination="l4t-7E-1oE" id="5w5-6S-FoD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="377.72727272727275" y="134.93723849372387"/>
         </scene>
@@ -378,16 +377,16 @@
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <image name="textfield" width="298" height="93"/>
         <namedColor name="BrandBlue">
-            <color red="0.24397432799999999" green="0.48371726269999998" blue="0.73728418350000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.24400000274181366" green="0.48399999737739563" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="BrandLightBlue">
-            <color red="0.85361438989639282" green="0.98000001907348633" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85399997234344482" green="0.98000001907348633" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandLightPurple">
-            <color red="0.87399685382843018" green="0.83534294366836548" blue="0.95461606979370117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.87400001287460327" green="0.83500003814697266" blue="0.95499998331069946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandPurple">
-            <color red="0.33315479755401611" green="0.061375387012958527" blue="0.86781072616577148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.33299997448921204" green="0.060999996960163116" blue="0.86799997091293335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
