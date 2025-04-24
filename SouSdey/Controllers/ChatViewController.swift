@@ -17,11 +17,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-        Message(sender: "1@2.com", body: "Hey!"),
-        Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "What's up?")
-    ]
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,24 +26,60 @@ class ChatViewController: UIViewController {
         title = J.appName
         navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: J.cellNibName, bundle: nil), forCellReuseIdentifier: J.cellIdentifier)
+        
+        loadMessage()
+    }
+    
+    func loadMessage() {
+        db.collection(J.FStore.collectionName)
+            .order(by: J.FStore.dateField)
+            .addSnapshotListener { (querySnapshot, error) in
+                
+                self.messages = []
+                
+                if let e = error {
+                    print("❌ Error retrieving data: \(e)")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            if let messageSender = data[J.FStore.senderField] as? String,
+                               let messageBody = data[J.FStore.bodyField] as? String {
+                                
+                                let newMessage = Message(sender: messageSender, body: messageBody)
+                                self.messages.append(newMessage)
+                                
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                    let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
     }
     
     @IBAction func messagePressed(_ sender: UIButton) {
-        if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
+        if let messageBody = messageTextField.text,
+           let messageSender = Auth.auth().currentUser?.email {
+            
             db.collection(J.FStore.collectionName).addDocument(data: [
                 J.FStore.senderField: messageSender,
-                J.FStore.bodyField: messageBody
-            ]) {
-                (error) in
+                J.FStore.bodyField: messageBody,
+                J.FStore.dateField: Date().timeIntervalSince1970
+            ]) { error in
                 if let e = error {
-                    print("Error occurred: \(e)")
+                    print("❌ Error saving message: \(e)")
                 } else {
-                    print("Succefully input")
+                    print("✅ Message successfully sent")
+                    DispatchQueue.main.async {
+                        self.messageTextField.text = ""
+                    }
                 }
             }
         }
-        
-        
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
