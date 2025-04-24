@@ -10,7 +10,7 @@ import Foundation
 struct J {
     static let appName = "🙏SouSdey"
     static let cellIdentifier = "ReusableCell"
-    static let cellNibName = "MessageCell"
+    static let cellNibName = "MessageCellTableViewCell"
     static let registerSegue = "goToRegister"
     static let loginSegue = "goToLogin"
     static let goToChatSegue = "goToChatView"
