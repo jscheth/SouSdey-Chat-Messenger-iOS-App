@@ -98,9 +98,31 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: J.cellIdentifier, for: indexPath) as! MessageCellTableViewCell
-        cell.label.text = messages[indexPath.row].body
+        cell.label.text = message.body
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            print("Message sender, \(message.sender)")
+            cell.leftImageAvatar.isHidden = true
+            cell.rightImageAvatar.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: J.BrandColors.lightPurple)
+            cell.label.textColor = UIColor(named: J.BrandColors.purple)
+            cell.layoutIfNeeded()
+        } else {
+            cell.leftImageAvatar.isHidden = false
+            cell.rightImageAvatar.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: J.BrandColors.purple)
+            cell.label.textColor = UIColor(named: J.BrandColors.lightPurple)
+            cell.layoutIfNeeded()
+        }
+        
+//        print("👈 leftAvatar: \(cell.leftAvatar?.isHidden ?? false)")
+//        print("👉 rightAvatar: \(cell.rightAvatar?.isHidden ?? false)")
+            
         return cell
+
     }
 }
 
